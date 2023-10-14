@@ -3,19 +3,35 @@ import React, {useState} from 'react';
 function TextForm(props) {
     const [text, setText] = useState("");
 
-    const onHandleClick = () => {
+    const onHandleClick = (e) => {
+        e.preventDefault();
         console.log("You clicked On Handle Click");
         setText(text.toUpperCase());
     }
 
-    const onHandleLowerClick = () => {
+    const onHandleLowerClick = (e) => {
+        e.preventDefault();
         console.log("You clicked On Lower Handle Click");
         setText(text.toLowerCase());
     }
 
     const handleOnChange = (e) => {
+        e.preventDefault();
         console.log("On change Handle");
         setText(e.target.value);
+    }
+
+    const onHandleClearTextClick = (e) => {
+        e.preventDefault();
+        console.log("Text clear");
+        const text = "";
+        setText(text);
+    }
+
+    const onHandleMakeBoldClick = (e) => {
+        e.preventDefault();
+        console.log("Text now bold");
+        setText(text.bold());
     }
 
     return (
@@ -28,6 +44,8 @@ function TextForm(props) {
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
                         <button className="btn btn-primary mx-1 my-3" onClick={onHandleClick}>Convert To UpperCase</button>
                         <button className="btn btn-primary mx-1 my-3" onClick={onHandleLowerClick}>Convert To LowerCase</button>
+                        <button className="btn btn-primary mx-1 my-3" onClick={onHandleClearTextClick}>Clear Text</button>
+                        <button className="btn btn-primary mx-1 my-3" onClick={onHandleMakeBoldClick}>Make Text Bold</button>
                     </div>
                 </form>
             </div>
