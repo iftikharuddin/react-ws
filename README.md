@@ -4,6 +4,7 @@
 - Component understanding [ Done ]
 - Props and Props Types [ Done ]
 - Understanding State & Handling Events in React [ Done ]
+- Adding more Logic to TextUtils [ Done ]
 - ....
 
 
