@@ -10,22 +10,35 @@ function App() {
   const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
 
+  const configureAlert = (message, type) => {
+      setAlert({
+          message: message,
+          type: type
+      });
+      setTimeout(()=> {
+        setAlert(null);
+      }, 1000);
+  };
+
+
   const toggleMode = () => {
       if(mode === "light") {
           setMode("dark");
           document.body.style.backgroundColor = "grey";
+          configureAlert(" Dark Mode Enabled ", 'success');
       }else{
           setMode("light");
           document.body.style.backgroundColor = "white";
-
+          configureAlert("Light Mode Enabled ", 'danger ');
       }
-  }
+  };
+
   return (
     <div>
         <Navbar about="AboutMe" mode={mode} toggleMode={toggleMode}/>
-        <Alert alert="This is a dman alert" />
+        <Alert alert={alert} />
         <div className="container my-3">
-            <TextForm heading="Enter your text "  mode={mode}formTextHeading="use below box to type ..."/>
+            <TextForm configureAlert={configureAlert} heading="Enter your text "  mode={mode}formTextHeading="use below box to type ..."/>
             {/*<About/>*/}
         </div>
     </div>

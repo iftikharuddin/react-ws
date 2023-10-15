@@ -7,12 +7,15 @@ function TextForm(props) {
         e.preventDefault();
         console.log("You clicked On Handle Click");
         setText(text.toUpperCase());
+        props.configureAlert("Converted to Upper Case", "success");
+
     }
 
     const onHandleLowerClick = (e) => {
         e.preventDefault();
         console.log("You clicked On Lower Handle Click");
         setText(text.toLowerCase());
+        props.configureAlert("Converted to Lower Case", "success");
     }
 
     const handleOnChange = (e) => {
@@ -26,12 +29,14 @@ function TextForm(props) {
         console.log("Text clear");
         const text = "";
         setText(text);
+        props.configureAlert("Text cleared!", "success");
     }
 
     const onHandleMakeBoldClick = (e) => {
         e.preventDefault();
         console.log("Text now bold");
         setText(text.bold());
+        props.configureAlert("Text is BOLD now", "success");
     }
 
     return (
