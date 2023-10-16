@@ -26,7 +26,7 @@ function About(props) {
 
     return (
         <div className="container my-3" style={myStyle}>
-            <div className="accordion" id="accordionExample">
+            <div className="accordion my-3" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                         <button className="accordion-button" type="button" data-bs-toggle="collapse"
