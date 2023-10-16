@@ -47,10 +47,10 @@ function TextForm(props) {
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1">{props.formTextHeading}</label>
                         <textarea className="form-control" style={{backgroundColor: props.mode === 'light' ? 'white' : 'grey', color: props.mode === 'light' ? 'black' : 'white'}} id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
-                        <button className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleClick}>Convert To UpperCase</button>
-                        <button className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleLowerClick}>Convert To LowerCase</button>
-                        <button className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleClearTextClick}>Clear Text</button>
-                        <button className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleMakeBoldClick}>Make Text Bold</button>
+                        <button disabled={text.length===0} className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleClick}>Convert To UpperCase</button>
+                        <button disabled={text.length===0} className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleLowerClick}>Convert To LowerCase</button>
+                        <button disabled={text.length===0} className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleClearTextClick}>Clear Text</button>
+                        <button disabled={text.length===0} className="btn btn-primary mx-1 my-3 my-1" onClick={onHandleMakeBoldClick}>Make Text Bold</button>
                     </div>
                 </form>
             </div>
